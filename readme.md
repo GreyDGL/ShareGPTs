@@ -6,6 +6,8 @@
 </div>
 
 ## Introduction
+🎯 Unleash the power of GPTs with ease! Our project automates the collection and sharing of prompts, sparking a world of creativity and inspiration.
+
 In this project, we implement an automatic tool that helps to retrieve the instructions in GPTs using the strategy of [prompt injection](https://arxiv.org/abs/2306.05499).
 
 ## Disclaimer
