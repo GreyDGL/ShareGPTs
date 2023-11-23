@@ -27,6 +27,7 @@ Upon the usage of the tool, you agree that you are responsible for your own acti
    * [fr0gger/Awesome-GPT-Agents](https://github.com/fr0gger/Awesome-GPT-Agents) [A curated list of GPT agents for cybersecurity]
    * [Link-AGI/AutoAgents](https://github.com/Link-AGI/AutoAgents)  [Generate different roles for GPTs to form a collaborative entity for complex tasks.]
    * [promptslab/Awesome-Openai-GPTs](https://github.com/promptslab/Awesome-Openai-GPTs) [About Awesome GPTs]
+   * [GPTs Hunter](https://www.gptshunter.com/) [Discover GPT Store]
 2. The tool relies on the [GPT4OpenAI](https://github.com/Erol444/gpt4-openai-api). You shall obtain the session token from the ChatGPT website following [how to get the session token](#how-to-get-the-session-token) section below. You can put it into `SESSION_TOKEN` file.
 3. Install the tool
    - Create a virtual environment if needed: `virtualenv venv`, `source venv/bin/activate`
@@ -36,7 +37,8 @@ Upon the usage of the tool, you agree that you are responsible for your own acti
 python3 main.py --url <url> --cookie <session_token> -- output <output_file>
 ```
 Example: you may use `python3 main.py --url https://chat.openai.com/g/g-PDWi5Scbc-all-around-teacher-learn-everything-in-3-min`
-5. Examine the output in output file, by default `GPTs_sysprompts.csv`. Note that there's a rate limit of 60s after each attempt, so the tool will execute for at least 60s before saving the results.
+
+5. Examine the output in output file, by default `GPTs_sysprompts.csv`. Note that there's a rate limit of 60*s* after each attempt, so the tool will execute for at least 60*s* before saving the results.
 
 
 ## How to get the session token
