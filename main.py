@@ -6,16 +6,41 @@ import pandas as pd
 import time
 from prefect import task, flow
 import argparse
+from datetime import datetime
+from langfuse.model import InitialGeneration, Usage
+from config.config import Config
+
+
+
+def langfuse_log(langfuse_logger, generationStartTime, injection_prompt, response):
+    generation = langfuse_logger.generation(
+        InitialGeneration(
+            name="chatgpt-completion",
+            startTime=generationStartTime,
+            endTime=datetime.now(),
+            model="gpt-4",
+            modelParameters= {"temperature": str(0.5)},  # by default 0.5
+            prompt=injection_prompt,
+            completion=response,
+            usage=Usage(
+                promptTokens=0,
+                completionTokens=0,  # do not count the tokens
+            ),
+        )
+    )
+    return generation
 
 
 @task(timeout_seconds=600)
 def injection(url, injection_prompt, my_session_token, runtime_saver):
     print("debug", my_session_token)
+    generationStartTime = datetime.now()
     try:
         llm = GPT4OpenAI(
             token=my_session_token, headless=False, model="gpt-4", gpts=url
         )
         response = llm(injection_prompt)
+        langfuse_log(langfuse_logger, generationStartTime, injection_prompt, response)
     except Exception as e:
         print(e)
         response = "ERROR"
@@ -88,6 +113,15 @@ if __name__ == "__main__":
     parser.add_argument("--cookie", type=str, help="cookie to GPTs", required=False)
     parser.add_argument("--output_file", type=str, help="output file name; will save in csv format", default="GPTs_sysprompts.csv", required=False)
 
+    os.environ[
+        "LANGFUSE_PUBLIC_KEY"
+    ] = Config.langfuse_public_key  # do not modify
+    os.environ[
+        "LANGFUSE_SECRET_KEY"
+    ] = Config.langfuse_secret_key  # do not modify
+    from langfuse import Langfuse
+
+    langfuse_logger = Langfuse()
 
 
     args = parser.parse_args()

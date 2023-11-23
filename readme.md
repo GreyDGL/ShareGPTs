@@ -33,7 +33,7 @@ Upon the usage of the tool, you agree that you are responsible for your own acti
 python3 main.py --url <url> --cookie <session_token> -- output <output_file>
 ```
 Example: you may use `python3 main.py --url https://chat.openai.com/g/g-PDWi5Scbc-all-around-teacher-learn-everything-in-3-min`
-4. Examine the output in output file, by default `output.txt`. Note that there's a rate limit of 60s after each attempt, so the tool will execute for at least 60s before saving the results.
+4. Examine the output in output file, by default `GPTs_sysprompts.csv`. Note that there's a rate limit of 60s after each attempt, so the tool will execute for at least 60s before saving the results.
 
 
 ## How to get the session token
