@@ -19,14 +19,15 @@ Upon the usage of the tool, you agree that you are responsible for your own acti
    * [awesome-gpts](https://github.com/taranjeet/awesome-gpts) [Collection of all the GPTs created by the community]
    * [linexjlin/GPTs](https://github.com/linexjlin/GPTs) [leaked prompts of GPTs]
    * [friuns2/Awesome-GPTs-Big-List](https://github.com/friuns2/Awesome-GPTs-Big-List) [Use OpenAI GPTs for Free, [GPTs Store](https://gptcall.net/)]
-   * [all-in-aigc/gpts-works](https://github.com/all-in-aigc/gpts-works) [A Third-party GPTs store]
+   * [all-in-aigc/gpts-works](https://github.com/all-in-aigc/gpts-works) [A Third-party GPTs store [GPTs Works](https://gpts.works/)]
    * [lxfater/Awesome-GPTs](https://github.com/lxfater/Awesome-GPTs) [1000+ GPTs and 10 categories. 80+ Leaked Prompt，Awesome，chatgpt，Ai，prompt]
    * [EmbraceAGI/Awesome-AI-GPTs](https://github.com/EmbraceAGI/Awesome-AI-GPTs) [Awesome AI GPTs, OpenAI GPTs, GPT-4, ChatGPT, GPTs, Prompts, plugins, Prompts leaking]
    * [Anil-matcha/Awesome-GPT-Store](https://github.com/Anil-matcha/Awesome-GPT-Store) [Awesome AI GPTs, OpenAI GPTs, GPT-4, ChatGPT, GPTs, Prompts, plugins, Prompts leaking]
    * [imartinez/privateGPT](https://github.com/imartinez/privateGPT) [About Interact with your documents using the power of GPT, 100% privately, no data leaks]
    * [fr0gger/Awesome-GPT-Agents](https://github.com/fr0gger/Awesome-GPT-Agents) [A curated list of GPT agents for cybersecurity]
-   * [Link-AGI/AutoAgents](https://github.com/Link-AGI/AutoAgents)  [Generate different roles for GPTs to form a collaborative entity for complex tasks.]
+   * [Link-AGI/AutoAgents](https://github.com/Link-AGI/AutoAgents)  [Generate different roles for GPTs to form a collaborative entity for complex tasks]
    * [promptslab/Awesome-Openai-GPTs](https://github.com/promptslab/Awesome-Openai-GPTs) [About Awesome GPTs]
+   * [GPTs Hunter](https://www.gptshunter.com/) [Discover GPT Store]
 2. The tool relies on the [GPT4OpenAI](https://github.com/Erol444/gpt4-openai-api). You shall obtain the session token from the ChatGPT website following [how to get the session token](#how-to-get-the-session-token) section below. You can put it into `SESSION_TOKEN` file.
 3. Install the tool
    - Create a virtual environment if needed: `virtualenv venv`, `source venv/bin/activate`
@@ -35,7 +36,8 @@ Upon the usage of the tool, you agree that you are responsible for your own acti
 ```commandline
 python3 main.py --url <url> --cookie <session_token> -- output <output_file>
 ```
-Example: you may use `python3 main.py --url https://chat.openai.com/g/g-PDWi5Scbc-all-around-teacher-learn-everything-in-3-min`
+  Example: you may use `python3 main.py --url https://chat.openai.com/g/g-PDWi5Scbc-all-around-teacher-learn-everything-in-3-min`
+
 5. Examine the output in output file, by default `GPTs_sysprompts.csv`. Note that there's a rate limit of 60s after each attempt, so the tool will execute for at least 60s before saving the results.
 
 
