@@ -489,7 +489,7 @@ class ChatGptDriver:
                 pass
         raise Exception("Failed to generate an image")
 
-    def send_message(self, message: str, stream: bool = False) -> dict:
+    def send_message(self, message: str, stream: bool = True) -> dict:
         """
         Send a message to ChatGPT\n
         :param message: Message to send
@@ -550,7 +550,7 @@ class ChatGptDriver:
         if stream:
             for i in self.__stream_message():
                 print(i, end="")
-                self.__sleep(0.1)
+                self.__sleep(0.2)
             return print()
 
         self.logger.debug("Waiting for completion...")

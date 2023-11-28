@@ -1,5 +1,7 @@
 # .gitignore
 SESSION_TOKEN
+*.txt
+*.png
 
 # Python files
 __pycache__/
