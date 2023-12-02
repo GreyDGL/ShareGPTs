@@ -6,3 +6,4 @@ langchain
 networkx
 pandas
 tqdm
+langfuse
