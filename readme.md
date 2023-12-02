@@ -36,7 +36,7 @@ Upon the usage of the tool, you agree that you are responsible for your own acti
    - Install the dependencies: `pip3 install -r requirements.txt`
 4. Run based on the following automatic code.
 ```commandline
-python3 main.py --url <url> --cookie <session_token> -- output <output_file>
+python3 main.py --url <url> --cookie <session_token> --output <output_file>
 ```
   Example: you may use `python3 main.py --url https://chat.openai.com/g/g-PDWi5Scbc-all-around-teacher-learn-everything-in-3-min`
 
